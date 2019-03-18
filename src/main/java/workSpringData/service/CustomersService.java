@@ -11,7 +11,7 @@ public interface CustomersService {
 
     Customers findCustomerById(BigDecimal custNum);
 
-    //Set<Customers> findByCompanyEndsWith(String end);
+    Set<Customers> findByCompanyEndsWith(String end);
 
     void insertCustomers(Customers customer);
 

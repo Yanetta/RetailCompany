@@ -34,12 +34,12 @@ public class CustomersServiceImpl implements CustomersService {
         return customers;
     }
 
-//    @Override
-//    public Set<Customers> findByCompanyEndsWith(String end) {
-//        LOG.debug(" in findCustomersByCredit_limitBefore method");
-//        HashSet<Customers> customersHashSet = new HashSet<Customers>(customersRepository.findByCompanyEndsWith(end));
-//        return customersHashSet;
-//    }
+    @Override
+    public Set<Customers> findByCompanyEndsWith(String end) {
+        LOG.debug(" in findCustomersByCredit_limitBefore method");
+        HashSet<Customers> customersHashSet = new HashSet<Customers>(customersRepository.findByCompanyEndsWith(end));
+        return customersHashSet;
+    }
 
     @Override
     public void insertCustomers(Customers customer) {
