@@ -1,7 +1,5 @@
 package workSpringData.service;
-
 import entities.Customers;
-
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -11,7 +9,7 @@ public interface CustomersService {
 
     Customers findCustomerById(BigDecimal custNum);
 
-    Set<Customers> findByCompanyEndsWith(String end);
+    Set<Customers> findByCompany(String s);
 
     void insertCustomers(Customers customer);
 

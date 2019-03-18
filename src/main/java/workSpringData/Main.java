@@ -8,13 +8,14 @@ import workSpringData.service.CustomersServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("workSpringData.config");
-        CustomersRepository customersRepository = context.getBean(CustomersRepository.class);
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("workSpringData");
 
+        CustomersRepository customersRepository = context.getBean(CustomersRepository.class);
         customersRepository.findAll().forEach(System.out::println);
 
-       CustomersServiceImpl customersService = context.getBean(CustomersServiceImpl.class);
-       customersService.getAllCustomers();
+        CustomersService customersService = context.getBean("service", CustomersService.class);
+        customersService.getAllCustomers().forEach(System.out::println);
+        customersService.findByCompany("Ро%").forEach(System.out::println);
 
         context.close();
     }

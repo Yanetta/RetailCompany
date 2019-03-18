@@ -1,7 +1,9 @@
 package workSpringData.service;
 import entities.Customers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.logging.log4j.LogManager;
@@ -12,7 +14,7 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-@Service
+@Service("service")
 @Transactional
 public class CustomersServiceImpl implements CustomersService {
     private static final Logger LOG = LogManager.getLogger(CustomersServiceImpl.class);
@@ -35,9 +37,9 @@ public class CustomersServiceImpl implements CustomersService {
     }
 
     @Override
-    public Set<Customers> findByCompanyEndsWith(String end) {
-        LOG.debug(" in findCustomersByCredit_limitBefore method");
-        HashSet<Customers> customersHashSet = new HashSet<Customers>(customersRepository.findByCompanyEndsWith(end));
+    public Set<Customers> findByCompany(String s) {
+        LOG.debug(" in findCustomersByCompany method");
+        HashSet<Customers> customersHashSet = new HashSet<Customers>(customersRepository.findCustomersByCompanyLike(s));
         return customersHashSet;
     }
 

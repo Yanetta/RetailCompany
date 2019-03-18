@@ -12,5 +12,5 @@ import java.util.Set;
 public interface CustomersRepository extends JpaRepository<Customers, BigDecimal> {
 
     @Cacheable("customersCached")
-    Set<Customers> findByCompanyEndsWith(String end);
+    Set<Customers> findCustomersByCompanyLike(String s);
 }
