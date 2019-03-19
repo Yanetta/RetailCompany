@@ -13,7 +13,7 @@ public class Main {
         CustomersRepository customersRepository = context.getBean(CustomersRepository.class);
         customersRepository.findAll().forEach(System.out::println);
 
-        CustomersService customersService = context.getBean("service", CustomersService.class);
+        CustomersService customersService = context.getBean(CustomersService.class);
         customersService.getAllCustomers().forEach(System.out::println);
         customersService.findByCompany("Ро%").forEach(System.out::println);
 
