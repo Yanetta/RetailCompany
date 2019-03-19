@@ -11,11 +11,7 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
     </Appenders>
-    <Loggers>
-
-        <AsyncLogger sort="error-logger" level="ERROR">
-            <AppenderRef ref="FEMAIL"/>
-        </AsyncLogger>
+    <Loggers>        
 
         <Root level="DEBUG" includeLocation="true">
             <AppenderRef ref="STDOUT" level="DEBUG"/>
