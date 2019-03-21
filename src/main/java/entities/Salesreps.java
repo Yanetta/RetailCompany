@@ -1,5 +1,7 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -21,6 +23,7 @@ public class Salesreps implements Serializable {
     @Column(name = "TITLE")
     private String title;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "REP_OFFICE")
     private Offices offices;
@@ -38,20 +41,25 @@ public class Salesreps implements Serializable {
     @Column(name = "QUOTA")
     private BigDecimal quota;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MANAGER")
     private Salesreps salesreps;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesreps")
     private Set<Offices> officesSet = new HashSet<Offices>(0);
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesreps")
     private Set<Customers> customersSet = new HashSet<Customers>(0);
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesreps")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesreps")
     private Set<Salesreps> salesrepsSet = new HashSet<Salesreps>(0);
 
 

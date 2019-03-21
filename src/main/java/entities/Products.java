@@ -1,5 +1,7 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -26,7 +28,8 @@ public class Products implements Serializable {
     @Column(name = "QTY_ON_HAND")
     private BigDecimal qty_on_hand;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "products")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "products")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
     public Products() {

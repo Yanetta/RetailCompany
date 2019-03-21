@@ -1,5 +1,7 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -12,7 +14,8 @@ public class Customers implements java.io.Serializable {
     @Column(name = "CUST_NUM")
     private BigDecimal cust_num;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CUST_REP")
     private Salesreps salesreps;
 
@@ -22,11 +25,16 @@ public class Customers implements java.io.Serializable {
     @Column(name = "COMPANY")
     private String company;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customers")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customers")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
 
     public Customers() {
+    }
+
+    public Customers(BigDecimal cust_num) {
+        this.cust_num = cust_num;
     }
 
     public Customers(BigDecimal cust_num, Salesreps salesreps, BigDecimal credit_limit, String company) {

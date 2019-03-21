@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Transactional
+//@Transactional
 public class CustomersServiceImpl implements CustomersService {
     private static final Logger LOG = LogManager.getLogger(CustomersServiceImpl.class);
 

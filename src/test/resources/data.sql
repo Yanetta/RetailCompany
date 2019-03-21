@@ -1,0 +1,2 @@
+Insert into MA_STUDENT.CUSTOMERS (CUST_NUM, CREDIT_LIMIT, COMPANY) values ('5555', '300', 'Oracle');
+Insert into MA_STUDENT.CUSTOMERS (CUST_NUM, CREDIT_LIMIT, COMPANY) values ('7777', '800', 'Intel');
