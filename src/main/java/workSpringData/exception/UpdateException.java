@@ -1,4 +1,4 @@
-package workSpringData.exeption;
+package workSpringData.exception;
 
 public class UpdateException  extends RuntimeException {
 

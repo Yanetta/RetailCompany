@@ -1,14 +1,11 @@
 package workSpringData.service;
 import entities.Customers;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import workSpringData.exeption.DeleteException;
+import workSpringData.exception.DeleteException;
 import workSpringData.repository.CustomersRepository;
 import java.math.BigDecimal;
 import java.util.HashSet;

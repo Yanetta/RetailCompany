@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "98db58af-eb07-4fb2-98ed-497aef3989ec",
+		"name": "CustomersController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllCustomers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/id?id=2123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer",
+						"id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerByCompany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/company/Apple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer",
+						"company",
+						"Apple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"cust_num\": 3333,\n        \"credit_limit\": 9000,\n        \"company\": \"App\"\n    }\n"
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/update/4444?creditLimit=7777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer",
+						"update",
+						"4444"
+					],
+					"query": [
+						{
+							"key": "creditLimit",
+							"value": "7777"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCustomers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/delete/4444",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"RetailCompany_war_exploded",
+						"customer",
+						"delete",
+						"4444"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

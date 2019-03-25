@@ -55,12 +55,6 @@ public class CustomerControllerH2Test {
     }
 
     @Test
-    public void testTempController() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/temp")).andDo(print()).andReturn();
-        assertEquals(Response.Status.OK.getStatusCode(), mvcResult.getResponse().getStatus());
-    }
-
-    @Test
     public void testGetAllCustomers() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/customer")).andDo(print()).andReturn();
         assertEquals(Response.Status.OK.getStatusCode(), mvcResult.getResponse().getStatus());
@@ -69,7 +63,7 @@ public class CustomerControllerH2Test {
 
     @Test
     public void testGetExistCustomerById() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/customer/id/{id}", "7777")).andDo(print()).andReturn();
+        MvcResult mvcResult = mockMvc.perform(get("/customer/id").param("id", "5555")).andDo(print()).andReturn();
         Customers customers = mapper.readValue(mvcResult.getResponse().getContentAsString(), Customers.class);
         assertEquals(Response.Status.OK.getStatusCode(), mvcResult.getResponse().getStatus());
         assertNotNull(customers);

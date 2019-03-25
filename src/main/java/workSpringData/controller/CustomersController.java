@@ -1,18 +1,14 @@
 package workSpringData.controller;
 
-
 import entities.Customers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import workSpringData.exeption.DeleteException;
-import workSpringData.exeption.UpdateException;
+import workSpringData.exception.DeleteException;
+import workSpringData.exception.UpdateException;
 import workSpringData.service.CustomersService;
-
-
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -33,9 +29,9 @@ public class CustomersController {
         return customers;
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/id")
     public @ResponseBody
-    Customers getCustomerById(@PathVariable("id") int id)  {
+    Customers getCustomerById(@RequestParam("id") Integer id)  {
         LOG.info(" in getCustomerById");
         Customers customers = customersService.findCustomerById(BigDecimal.valueOf(id));
         LOG.info("getCustomerById finished");
