@@ -8,25 +8,26 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.util.Locale;
 import java.util.Properties;
-@EnableCaching
+
 @Configuration
+@ComponentScan("workSpringData.service")
+@EnableCaching
 @EnableTransactionManagement
 @EnableJpaRepositories("workSpringData.repository")
-@ComponentScan("workSpringData.service")
-@PropertySource("springData/springData.properties")
-public class DataConfig {
+@PropertySource("classpath:workSpringData/config/springData.properties")
+public class DataConfig  {
     private static final Logger LOG = LogManager.getLogger(DataConfig.class);
 
     @Value("${driver}")
