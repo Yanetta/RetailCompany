@@ -29,7 +29,7 @@ public class CustomersServiceImpl implements CustomersService {
     @Override
     public Customers findCustomerById(BigDecimal custNum) {
         LOG.debug(" in findCustomerById method");
-        Customers customers = customersRepository.findById(custNum).get();
+        Customers customers = customersRepository.findById(custNum).orElse(new Customers(BigDecimal.valueOf(8888)));
         return customers;
     }
 
