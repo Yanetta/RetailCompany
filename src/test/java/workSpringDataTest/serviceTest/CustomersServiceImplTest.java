@@ -1,4 +1,4 @@
-package workSpringDataTest;
+package workSpringDataTest.serviceTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -9,7 +9,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import java.math.BigDecimal;
 import java.util.*;
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

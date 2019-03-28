@@ -1,11 +1,9 @@
 package workSpringData.service;
 
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.springframework.stereotype.Service;
 import workSpringData.dto.CustomerDetails;
 import workSpringData.dto.CustomerDto;
-
-import java.math.BigDecimal;
 
 @Service
 public class CustomerCreatorImpl implements CustomerCreator {

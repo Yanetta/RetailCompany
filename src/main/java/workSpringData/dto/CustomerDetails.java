@@ -1,23 +1,17 @@
 package workSpringData.dto;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import entities.Orders;
-import entities.Salesreps;
+import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
 
 public class CustomerDetails {
-    @Min(value = 100, message = "3")
-    @Max(value = 10000, message = "2")
+    @Max(value = 9999, message = "2")
     private BigDecimal credit_limit;
 
+    @Pattern(message = "5", regexp = "^[A-Za-z]{2,15}$")
+    @Length(min = 2, message = "4")
     private String company;
 
     public BigDecimal getCredit_limit() {

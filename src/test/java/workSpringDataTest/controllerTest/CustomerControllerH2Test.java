@@ -1,4 +1,4 @@
-package workSpringDataTest;
+package workSpringDataTest.controllerTest;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import javax.ws.rs.core.Response;
 import javax.sql.DataSource;
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

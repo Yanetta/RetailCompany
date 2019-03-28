@@ -1,5 +1,5 @@
 package workSpringData.service;
-import entities.Customers;
+import workSpringData.entities.Customers;
 import java.math.BigDecimal;
 import java.util.Set;
 

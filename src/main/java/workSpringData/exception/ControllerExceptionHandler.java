@@ -47,7 +47,9 @@ public class ControllerExceptionHandler {
     @PostConstruct
     private void intValidationCodeDescription() {
         validationCodeDescription.put("1", "Customer must not be null");
-        validationCodeDescription.put("2", "credit limit must not be less than 100");
-        validationCodeDescription.put("3", "credit limit must not be more than 10000");
+        validationCodeDescription.put("2", "credit limit must not be more than 9999");
+        validationCodeDescription.put("3", "custnum must not be less than 999");
+        validationCodeDescription.put("4", "length should not be less than two symbols");
+        validationCodeDescription.put("5", "name should not contain digit symbols, should not be less than 2 symbols and more than 15 symbols");
     }
 }

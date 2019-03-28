@@ -1,6 +1,6 @@
-package workSpringDataTest;
+package workSpringDataTest.repositoryTest;
 
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
