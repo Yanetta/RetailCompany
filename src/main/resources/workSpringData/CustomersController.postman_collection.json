@@ -100,7 +100,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\n    {\n        \"cust_num\": 3333,\n        \"credit_limit\": 9000,\n        \"company\": \"App\"\n    }\n"
+					"raw": "{\n  \"cust_num\": 4440,\n  \"customerDetails\": {\n    \"company\": \"Woo\",\n    \"credit_limit\": 330\n  }\n}\n"
 				},
 				"url": {
 					"raw": "http://localhost:8088/RetailCompany_war_exploded/customer/insert",

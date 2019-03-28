@@ -1,6 +1,6 @@
-package workSpringDataTest;
+package workSpringDataTest.repositoryTest;
 
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,8 +19,6 @@ import workSpringData.repository.CustomersRepository;
 import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;

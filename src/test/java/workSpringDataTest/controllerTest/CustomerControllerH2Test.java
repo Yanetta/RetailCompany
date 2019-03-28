@@ -1,4 +1,4 @@
-package workSpringDataTest;
+package workSpringDataTest.controllerTest;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import javax.ws.rs.core.Response;
 import javax.sql.DataSource;
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -97,7 +97,6 @@ public class CustomerControllerH2Test {
     @Test
     public void testUpdateNotExistCustomer() throws Exception {
         MvcResult mvcResult = mockMvc.perform(put("/customer/update/{idd}", "8888").param("creditLimit", "400")).andDo(print()).andReturn();
-
         assertEquals(500, mvcResult.getResponse().getStatus());
         assertEquals("application/json;charset=UTF-8", mvcResult.getResponse().getContentType());
     }

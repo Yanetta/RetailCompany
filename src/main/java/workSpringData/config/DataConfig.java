@@ -13,8 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
@@ -52,7 +50,7 @@ public class DataConfig  {
         LocalContainerEntityManagerFactoryBean lfb = new LocalContainerEntityManagerFactoryBean();
         lfb.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         lfb.setDataSource(dataSource());
-        lfb.setPackagesToScan("entities");
+        lfb.setPackagesToScan("workSpringData/entities");
         lfb.setJpaProperties(hibernateProps());
         return lfb;
     }

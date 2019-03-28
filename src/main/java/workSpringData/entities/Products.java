@@ -1,4 +1,4 @@
-package entities;
+package workSpringData.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

@@ -1,5 +1,5 @@
 package workSpringData.service;
-import entities.Customers;
+import workSpringData.entities.Customers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class CustomersServiceImpl implements CustomersService {
     @Override
     public Customers findCustomerById(BigDecimal custNum) {
         LOG.debug(" in findCustomerById method");
-        Customers customers = customersRepository.findById(custNum).get();
+        Customers customers = customersRepository.findById(custNum).orElse(new Customers(BigDecimal.valueOf(8888)));
         return customers;
     }
 
