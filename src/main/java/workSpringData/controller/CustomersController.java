@@ -1,5 +1,7 @@
 package workSpringData.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import workSpringData.entities.Customers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -70,6 +72,7 @@ public class CustomersController {
     }
 
     @PostMapping("/insert")
+    @ApiOperation(authorizations = { @Authorization(value = "basicAuth") }, value = "insertCustomer")
     public void insertCustomer(@Valid @RequestBody CustomerDto customerDto) {
         LOG.info("in insertCustomer");
         Customers customers = customerCreator.createCustomer(customerDto);
@@ -78,6 +81,7 @@ public class CustomersController {
     }
 
     @DeleteMapping("/delete/{id}")
+    @ApiOperation(authorizations = { @Authorization(value = "basicAuth") }, value = "deleteCustomerById")
     public void deleteCustomerById(@PathVariable("id") int id) {
         Customers customers = customersService.findCustomerById(BigDecimal.valueOf(id));
         if (Objects.isNull(customers)) {

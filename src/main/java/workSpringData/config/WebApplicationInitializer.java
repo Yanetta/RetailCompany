@@ -1,12 +1,13 @@
 package workSpringData.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import workSpringData.controller.SpringSecurityConfig;
 
 public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class[]{SpringSecurityConfig.class};
     }
 
     @Override
