@@ -4,7 +4,7 @@
 
 Tools:  
 
-Java:Spring (MVC, Data, Security), Tomcat, Hibernate, Servlets, Jackson, JSR380 (java bean validation), log4j (with email notification)
+Java: Spring (MVC, Data, Security), Tomcat, Hibernate, Servlets, Jackson, JSR380 (java bean validation), log4j (with email notification)
 
 DB: Oracle 
 
