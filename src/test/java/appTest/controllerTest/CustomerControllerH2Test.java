@@ -84,7 +84,7 @@ public class CustomerControllerH2Test {
     @Test
     public void testDeleteNotExistCustomerById() throws Exception {
         MvcResult mvcResult = mockMvc.perform(delete("/customer/delete/{id}", "1111")).andDo(print()).andReturn();
-        assertEquals(500, mvcResult.getResponse().getStatus());
+        assertEquals(422, mvcResult.getResponse().getStatus());
         assertEquals("application/json;charset=UTF-8", mvcResult.getResponse().getContentType());
     }
 
@@ -97,7 +97,7 @@ public class CustomerControllerH2Test {
     @Test
     public void testUpdateNotExistCustomer() throws Exception {
         MvcResult mvcResult = mockMvc.perform(put("/customer/update/{idd}", "8888").param("creditLimit", "400")).andDo(print()).andReturn();
-        assertEquals(500, mvcResult.getResponse().getStatus());
+        assertEquals(422, mvcResult.getResponse().getStatus());
         assertEquals("application/json;charset=UTF-8", mvcResult.getResponse().getContentType());
     }
 
